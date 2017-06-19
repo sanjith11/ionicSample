@@ -3,21 +3,38 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>GP List</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-right>
-        {{item.note}}
+    <ion-item-group>
+      <ion-item-divider color="light"></ion-item-divider>
+    <li ion-item *ngFor="let item of items" >
+     <div class="ion-title">
+      <b>{{item.clinicName}}</b>
+     </div>
+      <div class="item-note" >
+        Address:{{item.clinicAddress}}
       </div>
+      <div class="item-note">
+        Phone:{{item.phoneNumber}}
+      </div>
+  <div>
+      <button ion-button (click)="openPage(item)">
+        Map
     </button>
+    <button ion-button (click)="itemTapped($event, item)">
+        Call
+    </button>
+    </div>
+ 
+    </li>
+    </ion-item-group>
   </ion-list>
   <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
+    You navigated here from <b>{{selectedItem.clinicRegion}}</b>
   </div>
 </ion-content>

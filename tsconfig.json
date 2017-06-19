@@ -4,6 +4,7 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    //"outDir": "dist/out-tsc",
     "lib": [
       "dom",
       "es2015"
