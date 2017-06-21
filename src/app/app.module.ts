@@ -13,6 +13,7 @@ import {ClinicService} from './ClinicService'
 import {GeocodeService} from './GeocodeService'
  import { HttpModule } from '@angular/http';
 import { AgmCoreModule } from '@agm/core';
+import { CallNumber } from '@ionic-native/call-number';
 @NgModule({
   declarations: [
     MyApp,
@@ -37,6 +38,7 @@ import { AgmCoreModule } from '@agm/core';
   ],
   providers: [
     ClinicService,
+    CallNumber,
     StatusBar,
     SplashScreen,
     GeocodeService,
